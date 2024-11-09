@@ -14,6 +14,39 @@ body {
 
 @layer base {
   :root {
+    /* Main Colors */
+    --primary: #ffd700; /* Bright Gold */
+    --primary-dark: #e6c200; /* Darker Gold */
+    --secondary: #1a1a1a; /* Almost Black */
+    --accent: #ffa500; /* Orange */
+  
+    /* Text Colors */
+    --text-primary: #1a1a1a; /* Almost Black */
+    --text-secondary: #4a4a4a; /* Dark Gray */
+    --text-light: #ffffff; /* White */
+    --text-muted: #6b7280; /* Gray */
+  
+    /* Background Colors */
+    --bg-primary: #ffffff; /* White */
+    --bg-secondary: #f9fafb; /* Light Gray */
+    --bg-dark: #1a1a1a; /* Almost Black */
+    --bg-accent: #fff8e5; /* Very Light Gold */
+  
+    /* Gradient Combinations */
+    --gradient-primary: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+    --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    --gradient-light: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+    /* Border Colors */
+    --border-light: #e5e7eb;
+    --border-dark: #374151;
+
+    
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
