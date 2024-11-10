@@ -1,0 +1,81 @@
+.courseDetails {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.courseDetails h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.semesterTabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.semesterTab {
+  background-color: var(--background-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.semesterTab.active {
+  background-color: var(--accent-color);
+  color: var(--white);
+}
+
+.topicList {
+  display: grid;
+  gap: 1rem;
+}
+
+.topicItem {
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topicItem h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.resourceLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.resourceLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.resourceLink:hover {
+  text-decoration: underline;
+}
+
+.backButton {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: var(--primary-color);
+}

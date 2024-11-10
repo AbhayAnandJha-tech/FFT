@@ -1,73 +1,73 @@
-"use client";
+'use client'
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, Menu, X, ChevronDown, LogIn } from "lucide-react";
-import SearchBar from "./SearchBar";
-import NotificationBadge from "../NotificationBadge.tsx";
-import UserProfile from "./UserProfile";
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Sun, Moon, Menu, X, ChevronDown, LogIn } from 'lucide-react'
+import SearchBar from './SearchBar'
+import NotificationBadge from '../NotificationBadge.tsx'
+import UserProfile from './UserProfile'
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState(null)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 50)
       const winScroll =
-        document.body.scrollTop || document.documentElement.scrollTop;
+        document.body.scrollTop || document.documentElement.scrollTop
       const height =
         document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
+        document.documentElement.clientHeight
+      const scrolled = (winScroll / height) * 100
       document.documentElement.style.setProperty(
-        "--scroll-progress",
+        '--scroll-progress',
         `${scrolled}%`
-      );
-    };
+      )
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
     {
-      label: "Learn",
+      label: 'Learn',
       dropdown: [
-        { to: "/courses", label: "Courses", icon: "📚" },
-        { to: "/games", label: "Games", icon: "🎮" },
-        { to: "/tutorials", label: "Tutorials", icon: "📝" },
-        { to: "/workshops", label: "Workshops", icon: "👥" },
-        { to: "/roadmap", label: "Learning Path", icon: "🗺️" },
+        { to: '/courses', label: 'Courses', icon: '📚' },
+        // { to: "/games", label: "Games", icon: "🎮" },
+        // { to: '/tutorials', label: 'Tutorials', icon: '📝' },
+        // { to: "/workshops", label: "Workshops", icon: "👥" },
+        // { to: '/roadmap', label: 'Roadmap', icon: '🗺️' },
       ],
     },
     {
-      label: "Community",
+      label: 'Community',
       dropdown: [
-        { to: "/forums", label: "Forums", icon: "💬" },
-        { to: "/events", label: "Events", icon: "📅" },
-        { to: "/mentorship", label: "Mentorship", icon: "🤝" },
-        { to: "/projects", label: "Projects", icon: "🛠️" },
+        // { to: '/forums', label: 'Forums', icon: '💬' },
+        { to: '/events', label: 'Events', icon: '📅' },
+        { to: '/mentorship', label: 'Mentorship', icon: '🤝' },
+        // { to: '/projects', label: 'Projects', icon: '🛠️' },
       ],
     },
-    { to: "/resources", label: "Resources" },
-    { to: "/pricing", label: "Pricing" },
-  ];
+    { to: '/resources', label: 'Resources' },
+    { to: '/pricing', label: 'Pricing' },
+  ]
 
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 bg-[#ffffff98] backdrop-blur-md transition-all duration-300 ${
-          isScrolled ? "shadow-md" : ""
+          isScrolled ? 'shadow-md' : ''
         }`}
       >
         <div
           className="absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-100"
-          style={{ width: "var(--scroll-progress, 0%)" }}
+          style={{ width: 'var(--scroll-progress, 0%)' }}
         />
         <div className="max-w-7xl mx-auto px-[5%] py-3 flex justify-between items-center relative">
           <Link href="/" className="flex items-center">
@@ -151,11 +151,11 @@ export default function Navbar() {
             {isLoggedIn ? (
               <UserProfile
                 user={{
-                  name: "Abhay",
-                  email: "abhayanandjha04@gmail.com",
-                  role: "Student",
+                  name: 'Abhay',
+                  email: 'abhayanandjha04@gmail.com',
+                  role: 'Student',
                   avatar:
-                    "https://getillustrations.b-cdn.net//photos/pack/3d-avatar-male_lg.png",
+                    'https://getillustrations.b-cdn.net//photos/pack/3d-avatar-male_lg.png',
                 }}
               />
             ) : (
@@ -191,10 +191,10 @@ export default function Navbar() {
             {isMenuOpen && (
               <motion.div
                 className="fixed md:hidden top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white pt-20 px-8 overflow-y-auto shadow-xl"
-                initial={{ x: "100%" }}
+                initial={{ x: '100%' }}
                 animate={{ x: 0 }}
-                exit={{ x: "100%" }}
-                transition={{ type: "spring", damping: 20 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'spring', damping: 20 }}
               >
                 {navItems.map((item) => (
                   <div key={item.label} className="py-2">
@@ -235,5 +235,5 @@ export default function Navbar() {
         </div>
       </nav>
     </>
-  );
+  )
 }

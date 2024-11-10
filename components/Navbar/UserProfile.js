@@ -23,9 +23,9 @@ export default function UserProfile({ user }) {
   const menuItems = [
     { icon: <UserIcon size={18} />, label: "My Profile", path: "/profile" },
     { icon: <BookOpen size={18} />, label: "My Courses", path: "/my-courses" },
-    { icon: <Bookmark size={18} />, label: "Saved Items", path: "/saved" },
-    { icon: <Award size={18} />, label: "Certificates", path: "/certificates" },
-    { icon: <Heart size={18} />, label: "Favorites", path: "/favorites" },
+    // { icon: <Bookmark size={18} />, label: "Saved Items", path: "/saved" },
+    // { icon: <Award size={18} />, label: "Certificates", path: "/certificates" },
+    // { icon: <Heart size={18} />, label: "Favorites", path: "/favorites" },
     { icon: <Bell size={18} />, label: "Notifications", path: "/notifications", badge: "3" },
     { icon: <Settings size={18} />, label: "Settings", path: "/settings" },
     { icon: <LogOut size={18} />, label: "Logout", onClick: handleLogout, className: styles.logoutItem },

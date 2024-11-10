@@ -101,7 +101,9 @@ const Newsletter = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
               className={`flex-1 py-4 px-6 text-base rounded-xl border-2 transition-all ease-in-out ${
-                status === 'invalid' ? 'border-red-500' : 'border-transparent'
+                status === 'invalid'
+                  ? 'border-red-500'
+                  : 'border-[#ffd700] focus:border-[#ffd700]'
               } bg-white bg-opacity-90 focus:outline-none focus:border-secondary focus:bg-white`}
             />
             <motion.button
@@ -109,7 +111,7 @@ const Newsletter = () => {
               disabled={isSubmitting}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-12 h-12 bg-gradient-to-br from-[#ffd700] to-[#ffa500] rounded-xl flex items-center justify-center text-primary cursor-pointer"
+              className="w-14 h-14 bg-gradient-to-br from-[#ffd700] to-[#ffa500] rounded-xl flex items-center justify-center text-primary cursor-pointer"
             >
               {isSubmitting ? (
                 <motion.div
