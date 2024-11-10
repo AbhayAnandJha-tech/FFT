@@ -127,7 +127,7 @@ const NotificationBadge = () => {
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <div className="p-4 border-b border-gray-100">
+              <div className="p-4 border-b border-gray-200">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-gray-800">
                     Notifications
@@ -157,8 +157,8 @@ const NotificationBadge = () => {
                     onClick={() => handleNotificationClick(notification.id)}
                   >
                     <motion.div
-                      className={`p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors cursor-pointer ${
-                        !notification.read ? "bg-blue-50/50" : ""
+                      className={`p-4 border-b border-gray-200 hover:bg-gray-100 transition-colors cursor-pointer ${
+                        !notification.read ? "bg-blue-100" : "bg-white"
                       }`}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}

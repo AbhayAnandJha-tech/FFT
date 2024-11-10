@@ -12,7 +12,7 @@ import Testimonials from "@/components/testimonials";
 import SocialProof from "@/components/trustedby";
 import Newsletter from "@/components/newsletter";
 import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default function Hero() {
   const [isLoading, setIsLoading] = useState(true);
