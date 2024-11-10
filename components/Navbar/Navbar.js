@@ -42,7 +42,7 @@ export default function Navbar() {
         // { to: "/games", label: "Games", icon: "🎮" },
         // { to: '/tutorials', label: 'Tutorials', icon: '📝' },
         // { to: "/workshops", label: "Workshops", icon: "👥" },
-        // { to: '/roadmap', label: 'Roadmap', icon: '🗺️' },
+        { to: '/roadmap', label: 'Roadmap', icon: '🗺️' },
       ],
     },
     {
