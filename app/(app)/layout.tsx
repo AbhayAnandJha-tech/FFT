@@ -1,18 +1,19 @@
-'use client'
+"use client";
 
-import Footer from '@/components/footer'
-import Navbar from '@/components/Navbar/Navbar'
+import { BrowserRouter } from "react-router-dom";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 export default function Layout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
       {children}
       <Footer />
-    </>
-  )
+    </BrowserRouter>
+  );
 }
