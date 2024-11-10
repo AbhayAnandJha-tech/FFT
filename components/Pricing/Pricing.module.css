@@ -1,0 +1,228 @@
+.pricing {
+  padding: 6rem 5%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+}
+
+.pricingContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricingHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pricingHeader h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  background: var(--gradient-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricingHeader p {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.billingToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.toggleButton {
+  width: 50px;
+  height: 28px;
+  background: var(--gradient-primary);
+  border-radius: 20px;
+  padding: 3px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggleThumb {
+  width: 22px;
+  height: 22px;
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+.billingToggle span {
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.billingToggle span.active {
+  opacity: 1;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.discount {
+  background: var(--gradient-primary);
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  color: var(--primary-color);
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pricingCard {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 3rem;
+  position: relative;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.pricingCard.popular {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.1),
+    rgba(255, 237, 74, 0.1)
+  );
+  border: 2px solid var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-primary);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.planHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.planHeader h3 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.planHeader p {
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.currency {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.period {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.annualPrice {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.checkIcon {
+  color: #28a745;
+}
+
+.timesIcon {
+  color: #dc3545;
+}
+
+.ctaButton {
+  width: 100%;
+  padding: 1rem;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 10px;
+  color: var(--primary-color);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrowIcon {
+  transform: translateX(5px);
+}
+
+.guarantee {
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+@media (max-width: 968px) {
+  .pricingGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 3rem;
+  }
+
+  .pricingCard.popular {
+    transform: none;
+  }
+}

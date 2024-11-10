@@ -1,0 +1,171 @@
+.resources {
+  padding: 6rem 5%;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  background: var(--gradient-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  perspective: 1000px;
+}
+
+.resourceCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.resourceCard.selected {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.resourceCard:hover .iconWrapper {
+  transform: rotateY(180deg);
+}
+
+.resourceCard h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+}
+
+.resourceCard p {
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.details ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.details li {
+  padding: 0.5rem 0;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.details li::before {
+  content: "→";
+  color: var(--secondary-color);
+}
+
+.accessButton {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 10px;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 215, 0, 0.1) 0%,
+    transparent 80%
+  );
+  pointer-events: none;
+}
+
+.resourceStats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat p {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .resources {
+    padding: 4rem 1rem;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .resourceStats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

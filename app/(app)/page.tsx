@@ -23,7 +23,7 @@ export default function Hero() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <section id="hero" className="relative min-h-screen overflow-hidden">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center max-w-7xl mx-auto px-6 min-h-screen">
           <motion.div
@@ -95,7 +95,6 @@ export default function Hero() {
       <Testimonials />
       <SocialProof />
       <Newsletter />
-      <Footer />
     </>
   )
 }
