@@ -72,14 +72,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-[5%] py-3 flex justify-between items-center relative">
           <Link href="/" className="flex items-center">
             <motion.div
-              className="relative p-2"
+              className="relative"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <motion.img
-                src="https://yt3.googleusercontent.com/E8jiN7fQJMA4X1bsuNLlVyUFXUzIJ6Vdagcls4CsOzE-qxhJ5aQ2EDR2f6kYzOrD-_7Rs3di4w=s900-c-k-c0x00ffffff-no-rj"
+                src="/fft_logo.jpg"
                 alt="FFT Logo"
-                className="h-[45px] w-auto object-contain rounded-lg overflow-hidden filter drop-shadow-sm md:h-[35px]"
+                className="h-full w-auto object-contain rounded-lg overflow-hidden filter drop-shadow-sm md:h-[35px]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               />
