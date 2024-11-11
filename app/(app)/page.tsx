@@ -37,9 +37,8 @@ export default function Hero() {
           >
             <h1 className="text-[clamp(2.75rem,5vw,3.75rem)] font-semibold leading-[1.1] tracking-tight text-foreground">
               <span className="font-['Roboto', sans-serif]">
-                Empowering Teens
+                Empowering Teens Through
               </span>
-              <span className="block font-['Roboto', sans-serif]">Through</span>
               <span className="block bg-gradient-to-r from-[#ffd700] to-[#ffa500] bg-clip-text text-transparent font-['Roboto', sans-serif]">
                 Engineering Education
               </span>
