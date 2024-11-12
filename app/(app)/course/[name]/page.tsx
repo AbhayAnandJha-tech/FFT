@@ -1,109 +1,109 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { FaFilePdf, FaVideo, FaQuestionCircle } from 'react-icons/fa'
-import styles from '@/components/CourseDetails/CourseDetails.module.css'
+import { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { FaFilePdf, FaVideo, FaQuestionCircle } from "react-icons/fa";
+import styles from "@/components/CourseDetails/CourseDetails.module.css";
 
 type Topic = {
-  name: string
-  pdfLink: string
-}
+  name: string;
+  pdfLink: string;
+};
 
 type Semester = {
-  name: string
-  topics: Topic[]
-}
+  name: string;
+  topics: Topic[];
+};
 
 type Course = {
-  name: string
-  semesters: Semester[]
-}
+  name: string;
+  semesters: Semester[];
+};
 
 const courseContent: Record<string, Course> = {
-  'applied-chemistry': {
-    name: 'Applied Chemistry',
+  "applied-chemistry": {
+    name: "Applied Chemistry",
     semesters: [
       {
-        name: '1st Semester',
+        name: "1st Semester",
         topics: [
           {
-            name: 'Atomic Structure',
-            pdfLink: '/pdfs/chemistry-atomic-structure.pdf',
+            name: "Atomic Structure",
+            pdfLink: "/pdfs/chemistry-atomic-structure.pdf",
           },
           {
-            name: 'Chemical Bonding',
-            pdfLink: '/pdfs/chemistry-chemical-bonding.pdf',
+            name: "Chemical Bonding",
+            pdfLink: "/pdfs/chemistry-chemical-bonding.pdf",
           },
           {
-            name: 'Electrochemistry',
-            pdfLink: '/pdfs/chemistry-electrochemistry.pdf',
+            name: "Electrochemistry",
+            pdfLink: "/pdfs/chemistry-electrochemistry.pdf",
           },
         ],
       },
       {
-        name: '2nd Semester',
+        name: "2nd Semester",
         topics: [
-          { name: 'Organic Chemistry', pdfLink: '/pdfs/chemistry-organic.pdf' },
-          { name: 'Polymer Chemistry', pdfLink: '/pdfs/chemistry-polymer.pdf' },
+          { name: "Organic Chemistry", pdfLink: "/pdfs/chemistry-organic.pdf" },
+          { name: "Polymer Chemistry", pdfLink: "/pdfs/chemistry-polymer.pdf" },
           {
-            name: 'Environmental Chemistry',
-            pdfLink: '/pdfs/chemistry-environmental.pdf',
+            name: "Environmental Chemistry",
+            pdfLink: "/pdfs/chemistry-environmental.pdf",
           },
         ],
       },
     ],
   },
-  'programming-in-c': {
-    name: 'Programming in C',
+  "programming-in-c": {
+    name: "Programming in C",
     semesters: [
       {
-        name: '1st Semester',
+        name: "1st Semester",
         topics: [
-          { name: 'Introduction to C', pdfLink: '/pdfs/c-introduction.pdf' },
+          { name: "Introduction to C", pdfLink: "/pdfs/c-introduction.pdf" },
           {
-            name: 'Data Types and Operators',
-            pdfLink: '/pdfs/c-data-types.pdf',
+            name: "Data Types and Operators",
+            pdfLink: "/pdfs/c-data-types.pdf",
           },
           {
-            name: 'Control Structures',
-            pdfLink: '/pdfs/c-control-structures.pdf',
+            name: "Control Structures",
+            pdfLink: "/pdfs/c-control-structures.pdf",
           },
         ],
       },
       {
-        name: '2nd Semester',
+        name: "2nd Semester",
         topics: [
-          { name: 'Functions', pdfLink: '/pdfs/c-functions.pdf' },
+          { name: "Functions", pdfLink: "/pdfs/c-functions.pdf" },
           {
-            name: 'Arrays and Pointers',
-            pdfLink: '/pdfs/c-arrays-pointers.pdf',
+            name: "Arrays and Pointers",
+            pdfLink: "/pdfs/c-arrays-pointers.pdf",
           },
           {
-            name: 'Structures and Unions',
-            pdfLink: '/pdfs/c-structures-unions.pdf',
+            name: "Structures and Unions",
+            pdfLink: "/pdfs/c-structures-unions.pdf",
           },
         ],
       },
     ],
   },
   // Additional courses go here
-}
+};
 
 interface CourseDetailsProps {
   params: {
-    name: string
-  }
+    name: string;
+  };
 }
 
 const CourseDetails = ({ params }: CourseDetailsProps) => {
-  const { name } = params
-  const [activeSemester, setActiveSemester] = useState(0)
+  const { name } = params;
+  const [activeSemester, setActiveSemester] = useState(0);
 
-  const course = courseContent[name]
+  const course = courseContent[name];
   if (!course) {
-    return <div>Course not found</div>
+    return <div>Course not found</div>;
   }
 
   return (
@@ -114,7 +114,7 @@ const CourseDetails = ({ params }: CourseDetailsProps) => {
           <button
             key={index}
             className={`${styles.semesterTab} ${
-              index === activeSemester ? styles.active : ''
+              index === activeSemester ? styles.active : ""
             }`}
             onClick={() => setActiveSemester(index)}
           >
@@ -141,7 +141,10 @@ const CourseDetails = ({ params }: CourseDetailsProps) => {
               >
                 <FaFilePdf /> PDF Notes
               </a>
-              <a href="#" className={styles.resourceLink}>
+              <a
+                href={`/course/${name}/video-lecture`}
+                className={styles.resourceLink}
+              >
                 <FaVideo /> Video Lecture
               </a>
               <a href="#" className={styles.resourceLink}>
@@ -155,7 +158,7 @@ const CourseDetails = ({ params }: CourseDetailsProps) => {
         Back to Courses
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default CourseDetails
+export default CourseDetails;
