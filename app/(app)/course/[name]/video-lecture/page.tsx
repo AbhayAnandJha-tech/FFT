@@ -138,7 +138,7 @@ export default function VideoLecture() {
               The Teddy and the Butterfly
             </h1>
             <p className="text-lg text-gray-600 mb-4">
-              Learn about the power of play and creativity in engineering
+              Learn about the power of play and creativityyyyyyyy in engineering
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
