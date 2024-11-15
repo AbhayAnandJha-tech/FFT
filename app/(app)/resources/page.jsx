@@ -1,77 +1,77 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaBook, FaVideo, FaCode, FaBrain, FaRocket } from "react-icons/fa";
-import ResourceCard from "@/components/Resources/ResourceCard";
-import styles from "@/components/Resources/Resources.module.css";
-import Navbar from "@/components/Navbar/Navbar";
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FaBook, FaVideo, FaCode, FaBrain, FaRocket } from 'react-icons/fa'
+import ResourceCard from '@/components/Resources/ResourceCard'
+import styles from '@/components/Resources/Resources.module.css'
+import Navbar from '@/components/Navbar/Navbar'
 
 export default function Resources() {
-  const [selectedResource, setSelectedResource] = useState(null);
+  const [selectedResource, setSelectedResource] = useState(null)
 
   const resources = [
     {
       id: 1,
-      title: "Interactive Study Guides",
-      description: "Comprehensive guides with real-world examples",
+      title: 'Interactive Study Guides',
+      description: 'Comprehensive guides with real-world examples',
       icon: <FaBook />,
       features: [
-        "Step-by-step explanations",
-        "Practice problems",
-        "Visual demonstrations",
-        "Progress tracking",
+        'Step-by-step explanations',
+        'Practice problems',
+        'Visual demonstrations',
+        'Progress tracking',
       ],
     },
     {
       id: 2,
-      title: "Video Tutorials",
-      description: "Expert-led video lessons on complex topics",
+      title: 'Video Tutorials',
+      description: 'Expert-led video lessons on complex topics',
       icon: <FaVideo />,
       features: [
-        "HD quality content",
-        "Downloadable resources",
-        "Closed captions",
-        "Mobile-friendly",
+        'HD quality content',
+        'Downloadable resources',
+        'Closed captions',
+        'Mobile-friendly',
       ],
     },
     {
       id: 3,
-      title: "Coding Playground",
-      description: "Interactive coding environment for practice",
+      title: 'Coding Playground',
+      description: 'Interactive coding environment for practice',
       icon: <FaCode />,
       features: [
-        "Multiple programming languages",
-        "Real-time compilation",
-        "Code sharing",
-        "Debugging tools",
+        'Multiple programming languages',
+        'Real-time compilation',
+        'Code sharing',
+        'Debugging tools',
       ],
     },
     {
       id: 4,
-      title: "AI Learning Assistant",
-      description: "Personalized learning powered by AI",
+      title: 'AI Learning Assistant',
+      description: 'Personalized learning powered by AI',
       icon: <FaBrain />,
       features: [
-        "24/7 doubt solving",
-        "Adaptive learning path",
-        "Performance analytics",
-        "Custom recommendations",
+        '24/7 doubt solving',
+        'Adaptive learning path',
+        'Performance analytics',
+        'Custom recommendations',
       ],
     },
     {
       id: 5,
-      title: "Project Hub",
-      description: "Real-world engineering projects",
+      title: 'Project Hub',
+      description: 'Real-world engineering projects',
       icon: <FaRocket />,
       features: [
-        "Industry partnerships",
-        "Mentor guidance",
-        "Project certification",
-        "Portfolio building",
+        'Industry partnerships',
+        'Mentor guidance',
+        'Project certification',
+        'Portfolio building',
       ],
     },
-  ];
+  ]
 
   return (
     <>
@@ -86,7 +86,7 @@ export default function Resources() {
           <p>Everything you need to succeed in your engineering journey</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-32">
+        <div className="grid grid-cols-2 md:grid-cols-3">
           <AnimatePresence>
             {resources.map((resource) => (
               <ResourceCard
@@ -124,5 +124,5 @@ export default function Resources() {
         </motion.div>
       </section>
     </>
-  );
+  )
 }
