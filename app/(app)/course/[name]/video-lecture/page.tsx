@@ -1,14 +1,14 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Progress } from "@/components/ui/progress";
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Separator } from '@/components/ui/separator'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Progress } from '@/components/ui/progress'
 import {
   MessageCircle,
   Send,
@@ -23,41 +23,41 @@ import {
   SkipBack,
   Volume2,
   VolumeX,
-} from "lucide-react";
+} from 'lucide-react'
 
 export default function VideoLecture() {
   const [messages, setMessages] = useState([
-    { id: 1, user: "Abhay", content: "Great lecture so far!" },
+    { id: 1, user: 'Abhay', content: 'Great lecture so far!' },
     {
       id: 2,
-      user: "Krishna",
-      content: "I have a question about the last slide.",
+      user: 'Krishna',
+      content: 'I have a question about the last slide.',
     },
-  ]);
-  const [handRaised, setHandRaised] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [volume, setVolume] = useState(100);
-  const [isMuted, setIsMuted] = useState(false);
+  ])
+  const [handRaised, setHandRaised] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const [volume, setVolume] = useState(100)
+  const [isMuted, setIsMuted] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
       if (isPlaying) {
         setProgress((prevProgress) =>
           prevProgress >= 100 ? 0 : prevProgress + 1
-        );
+        )
       }
-    }, 1000);
+    }, 1000)
 
-    return () => clearInterval(timer);
-  }, [isPlaying]);
+    return () => clearInterval(timer)
+  }, [isPlaying])
 
   const sendMessage = (content: string) => {
     setMessages([
       ...messages,
-      { id: messages.length + 1, user: "You", content },
-    ]);
-  };
+      { id: messages.length + 1, user: 'You', content },
+    ])
+  }
 
   return (
     <div className="flex flex-col md:flex-row h-screen bg-gradient-to-b from-yellow-50 to-white text-gray-800">
@@ -146,13 +146,13 @@ export default function VideoLecture() {
               variant="outline"
               className={`${
                 handRaised
-                  ? "bg-yellow-200 text-yellow-800"
-                  : "bg-white text-gray-800"
+                  ? 'bg-yellow-200 text-yellow-800'
+                  : 'bg-white text-gray-800'
               } border-2 border-yellow-500 hover:bg-yellow-100 transition-colors duration-300`}
               onClick={() => setHandRaised(!handRaised)}
             >
               <Hand className="mr-2 h-4 w-4" />
-              {handRaised ? "Lower Hand" : "Raise Hand"}
+              {handRaised ? 'Lower Hand' : 'Raise Hand'}
             </Button>
             <Button
               variant="outline"
@@ -268,13 +268,13 @@ export default function VideoLecture() {
           </div>
           <form
             onSubmit={(e) => {
-              e.preventDefault();
+              e.preventDefault()
               const input = e.currentTarget.elements.namedItem(
-                "message"
-              ) as HTMLInputElement;
+                'message'
+              ) as HTMLInputElement
               if (input.value.trim()) {
-                sendMessage(input.value);
-                input.value = "";
+                sendMessage(input.value)
+                input.value = ''
               }
             }}
             className="flex space-x-2"
@@ -295,5 +295,5 @@ export default function VideoLecture() {
         </div>
       </motion.div>
     </div>
-  );
+  )
 }
